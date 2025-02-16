@@ -1,0 +1,26 @@
+package conversion;
+import java.util.Scanner;
+
+public class BinaryToDecimal {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the binary value");
+		String binary = scanner.nextLine();
+		
+		int sum = 0;
+		int count = binary.length()-1;		
+		for(int i=0; i<binary.length(); i++) {
+			int digit = Character.getNumericValue(binary.charAt(i));
+			int current_value = digit*(2^count);
+			System.out.println("count "+ count);
+			System.out.println("digit "+digit);
+			System.out.println("current value "+current_value);
+			sum += current_value;
+			count -= 1;
+		}
+		System.out.println("Anser: " + sum);
+		
+	}
+}
